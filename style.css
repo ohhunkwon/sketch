@@ -7,3 +7,20 @@ html {
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+#container {
+  display: grid;
+  height: 500px;
+  width: 500px;
+  margin: auto;
+  border: 2px solid black;
+}
+
+.cell {
+  background-color: white;
+  border: 1px solid lightslategrey;
+}
+
+.fill {
+  background-color: black;
+}
