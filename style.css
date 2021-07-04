@@ -5,13 +5,43 @@
 }
 
 html {
-  background-color: beige;
+  background-color: #EDEDED;
+}
+
+header {
+  padding: 30px;
+  font-size: 1.5rem;
+  background-color: #444444;
+  color: white;
+  border-bottom: 3px solid black;
 }
 
 #container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+button, p, #slider {
+  margin: 5px;
+  font-size: 1rem;
+}
+
+#pen-settings {
+  display: flex;
+  justify-content: center;
+}
+
+#grid-settings {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+#grid {
   display: grid;
-  height: 500px;
-  width: 500px;
+  height: 480px;
+  width: 480px;
   margin: auto;
   border: 2px solid black;
 }

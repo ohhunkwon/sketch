@@ -1,4 +1,4 @@
-const container = document.getElementById('container')
+const grid = document.getElementById('grid')
 const dimension = document.getElementById('dimension')
 
 window.addEventListener('load', createGrid(dimension.value))
@@ -13,11 +13,11 @@ function createGrid(dimension) {
     for (let i = 0; i < dimension ** 2; i++) {
         const cell = document.createElement('div')
         cell.classList.add('cell')
-        container.appendChild(cell)
+        grid.appendChild(cell)
     }
 
-    container.style.gridTemplateColumns = `repeat(${dimension}, 1fr)`
-    container.style.gridTemplateRows = `repeat(${dimension}, 1fr)`
+    grid.style.gridTemplateColumns = `repeat(${dimension}, 1fr)`
+    grid.style.gridTemplateRows = `repeat(${dimension}, 1fr)`
 
     const cells = document.querySelectorAll('.cell')
     cells.forEach(cell => cell.addEventListener('mouseover', draw))
@@ -28,7 +28,7 @@ function draw() {
 }
 
 function clearGrid() {
-    while (container.firstChild) {
-        container.removeChild(container.lastChild)
+    while (grid.firstChild) {
+        grid.removeChild(grid.lastChild)
     }
 }
