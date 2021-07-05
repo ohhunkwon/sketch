@@ -25,7 +25,7 @@ header {
 button, p, #slider {
   margin: 5px;
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 #pen-settings {
@@ -50,5 +50,8 @@ button, p, #slider {
 
 .cell {
   background-color: white;
+}
+
+.cell-border {
   border: 1px solid lightslategrey;
 }

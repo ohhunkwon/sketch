@@ -1,6 +1,7 @@
 const grid = document.getElementById('grid')
 const dimension = document.getElementById('dimension')
 const resetBtn = document.getElementById('reset')
+const toggleGridLinesBtn = document.getElementById('grid-lines')
 const blackBtn = document.getElementById('black')
 const rainbowBtn = document.getElementById('rainbow')
 const eraserBtn = document.getElementById('eraser')
@@ -19,6 +20,7 @@ function createGrid(dimension) {
     for (let i = 0; i < dimension ** 2; i++) {
         const cell = document.createElement('div')
         cell.classList.add('cell')
+        cell.classList.add('cell-border')
         grid.appendChild(cell)
     }
 
@@ -39,6 +41,17 @@ function clearGrid() {
 function resetGrid() {
     const drawnCells = document.querySelectorAll('.cell')
     drawnCells.forEach(cell => cell.style.backgroundColor = 'white')
+}
+
+function toggleLines() {
+    const cells = document.querySelectorAll('.cell')
+    cells.forEach(cell => {
+        if (cell.classList.contains('cell-border')) {
+            cell.classList.remove('cell-border')
+        } else {
+            cell.classList.add('cell-border')
+        }
+    })
 }
 
 function drawBlack() {
@@ -63,6 +76,7 @@ function erase() {
 }
 
 resetBtn.addEventListener('click', resetGrid)
+toggleGridLinesBtn.addEventListener('click', toggleLines)
 rainbowBtn.addEventListener('click', drawRainbow)
 blackBtn.addEventListener('click', drawBlack)
 eraserBtn.addEventListener('click', erase)
