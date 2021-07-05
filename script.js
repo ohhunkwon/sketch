@@ -1,10 +1,13 @@
 const grid = document.getElementById('grid')
 const dimension = document.getElementById('dimension')
-const reset = document.getElementById('reset')
-const black = document.getElementById('black')
-const rainbow = document.getElementById('rainbow')
+const resetBtn = document.getElementById('reset')
+const blackBtn = document.getElementById('black')
+const rainbowBtn = document.getElementById('rainbow')
+const eraserBtn = document.getElementById('eraser')
 
 window.addEventListener('load', createGrid(dimension.value))
+
+// Grid functionality
 
 dimension.onchange = () => {
     createGrid(dimension.value)
@@ -31,6 +34,8 @@ function clearGrid() {
     }
 }
 
+// Buttons functionality
+
 function resetGrid() {
     const drawnCells = document.querySelectorAll('.cell')
     drawnCells.forEach(cell => cell.style.backgroundColor = 'white')
@@ -50,6 +55,14 @@ function drawRainbow() {
     }))
 }
 
-reset.addEventListener('click', resetGrid)
-rainbow.addEventListener('click', drawRainbow)
-black.addEventListener('click', drawBlack)
+function erase() {
+    const cells = document.querySelectorAll('.cell')
+    cells.forEach(cell => cell.addEventListener('mouseover', (e) => {
+        e.target.style.backgroundColor = 'white'
+    }))
+}
+
+resetBtn.addEventListener('click', resetGrid)
+rainbowBtn.addEventListener('click', drawRainbow)
+blackBtn.addEventListener('click', drawBlack)
+eraserBtn.addEventListener('click', erase)

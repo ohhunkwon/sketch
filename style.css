@@ -24,12 +24,14 @@ header {
 
 button, p, #slider {
   margin: 5px;
-  font-size: 1rem;
+  padding: 10px;
+  font-size: 1.2rem;
 }
 
 #pen-settings {
   display: flex;
   justify-content: center;
+  margin: 10px;
 }
 
 #grid-settings {
